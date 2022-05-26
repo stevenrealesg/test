@@ -4,10 +4,12 @@ const http = require('http');
 const { Server } = require("socket.io");
 const cors = require('cors');
 const fs = require('fs');
+const dotenv = require('dotenv');
 const { getDataFile } = require('./actionsFile');
 const routePerson = require('./routes/person.route');
 
-const port = 3001
+dotenv.config();
+const port = process.env.PORT || 3001
 
 app.use(cors())
 app.use(express.json())
